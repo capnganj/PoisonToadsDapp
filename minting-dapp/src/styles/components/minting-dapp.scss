@@ -173,7 +173,7 @@
     @apply shadow;
 
     .preview {
-      @apply p-8;
+      @apply p-6;
 
       @apply bg-primary-200;
       
@@ -221,5 +221,12 @@
         @apply border-0;
       }
     }
+  }
+
+  .project-info {
+    @apply px-6 py-4;
+    @apply text-center;
+    @apply font-mono;
+    @apply text-sm;
   }
 }

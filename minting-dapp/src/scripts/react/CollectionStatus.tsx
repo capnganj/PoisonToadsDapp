@@ -44,7 +44,7 @@ export default class CollectionStatus extends React.Component<Props, State> {
 
           <div className='mint-discount'>
             <span className='label'>Token Price</span>
-            { ethers.utils.formatEther(this.props.discountPrice).slice(0,6) }
+            { ethers.utils.formatEther(this.props.discountPrice).slice(0,6) } Matic
           </div>
 
         </div>
