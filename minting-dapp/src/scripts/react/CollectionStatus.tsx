@@ -1,12 +1,13 @@
 import React from 'react';
+import { ethers, BigNumber } from 'ethers'
 
 interface Props {
   userAddress: string|null;
   totalSupply: number;
   maxSupply: number;
   isPaused: boolean;
-  isWhitelistMintEnabled: boolean;
-  isUserInWhitelist: boolean;
+  tokenPrice: BigNumber;
+  discountPrice: BigNumber;
 }
 
 interface State {
@@ -24,7 +25,7 @@ export default class CollectionStatus extends React.Component<Props, State> {
 
   private isSaleOpen(): boolean
   {
-    return this.props.isWhitelistMintEnabled || !this.props.isPaused;
+    return !this.props.isPaused;
   }
 
   render() {
@@ -41,16 +42,11 @@ export default class CollectionStatus extends React.Component<Props, State> {
             {this.props.totalSupply}/{this.props.maxSupply}
           </div>
 
-          <div className="current-sale">
-            <span className="label">Sale status</span>
-            {this.isSaleOpen() ?
-              <>
-                {this.props.isWhitelistMintEnabled ? 'Whitelist only' : 'Open'}
-              </>
-              :
-              'Closed'
-            }
+          <div className='mint-discount'>
+            <span className='label'>Token Price</span>
+            { ethers.utils.formatEther(this.props.discountPrice).slice(0,6) }
           </div>
+
         </div>
       </>
     );

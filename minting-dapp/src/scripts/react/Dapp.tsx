@@ -22,8 +22,7 @@ interface State {
   maxMintAmountPerTx: number;
   tokenPrice: BigNumber;
   isPaused: boolean;
-  isWhitelistMintEnabled: boolean;
-  isUserInWhitelist: boolean;
+  discountPrice: BigNumber;
   errorMessage: string|JSX.Element|null,
 }
 
@@ -36,8 +35,7 @@ const defaultState: State = {
   maxMintAmountPerTx: 0,
   tokenPrice: BigNumber.from(0),
   isPaused: true,
-  isWhitelistMintEnabled: false,
-  isUserInWhitelist: false,
+  discountPrice: BigNumber.from(0),
   errorMessage: null,
 };
 
@@ -62,7 +60,6 @@ export default class Dapp extends React.Component<Props, State> {
           <br />
           But don't worry! <span className="emoji">😃</span> You can always interact with the smart-contract through <a href={this.generateContractUrl()} target="_blank">{this.state.networkConfig.blockExplorer.name}</a> and <strong>we do our best to provide you with the best user experience possible</strong>, even from there.<br />
           <br />
-          You can also get your <strong>Whitelist Proof</strong> manually, using the tool below.
         </>,
       );
     }
@@ -77,20 +74,13 @@ export default class Dapp extends React.Component<Props, State> {
   async mintTokens(amount: number): Promise<void>
   {
     try {
-      await this.contract.mint(amount, {value: this.state.tokenPrice.mul(amount)});
+      await this.contract.mint(amount, {value: this.state.discountPrice.mul(amount)});
     } catch (e) {
       this.setError(e);
     }
   }
 
-  async whitelistMintTokens(amount: number): Promise<void>
-  {
-    try {
-      //await this.contract.whitelistMint(amount, Whitelist.getProofForAddress(this.state.userAddress!), {value: this.state.tokenPrice.mul(amount)});
-    } catch (e) {
-      this.setError(e);
-    }
-  }
+
 
   private isWalletConnected(): boolean
   {
@@ -135,20 +125,17 @@ export default class Dapp extends React.Component<Props, State> {
                   maxSupply={this.state.maxSupply}
                   totalSupply={this.state.totalSupply}
                   isPaused={this.state.isPaused}
-                  isWhitelistMintEnabled={this.state.isWhitelistMintEnabled}
-                  isUserInWhitelist={this.state.isUserInWhitelist}
+                  tokenPrice={this.state.tokenPrice}
+                  discountPrice={this.state.discountPrice}
                 />
                 {this.state.totalSupply < this.state.maxSupply ?
                   <MintWidget
                     maxSupply={this.state.maxSupply}
                     totalSupply={this.state.totalSupply}
-                    tokenPrice={this.state.tokenPrice}
+                    tokenPrice={this.state.discountPrice}
                     maxMintAmountPerTx={this.state.maxMintAmountPerTx}
                     isPaused={this.state.isPaused}
-                    isWhitelistMintEnabled={this.state.isWhitelistMintEnabled}
-                    isUserInWhitelist={this.state.isUserInWhitelist}
                     mintTokens={(mintAmount) => this.mintTokens(mintAmount)}
-                    whitelistMintTokens={(mintAmount) => this.whitelistMintTokens(mintAmount)}
                   />
                   :
                   <div className="collection-sold-out">
@@ -269,7 +256,7 @@ export default class Dapp extends React.Component<Props, State> {
       this.setError('Could not find the contract, are you connected to the right chain?');
 
       return;
-    }
+    } 
 
     this.contract = new ethers.Contract(
       CollectionConfig.contractAddress!,
@@ -277,12 +264,15 @@ export default class Dapp extends React.Component<Props, State> {
       this.provider.getSigner(),
     ) as NftContractType;
 
+    
+
     this.setState({
       maxSupply: (await this.contract.maxSupply()).toNumber(),
       totalSupply: (await this.contract.totalSupply()).toNumber(),
       maxMintAmountPerTx: (await this.contract.maxMintAmountPerTx()).toNumber(),
       tokenPrice: await this.contract.cost(),
       isPaused: await this.contract.paused(),
+      discountPrice: await this.contract.discountCost(walletAccounts[0])
     });
   }
 
