@@ -176,11 +176,14 @@ export default class Dapp extends React.Component<Props, State> {
           <div className='project-info'>
             <h3><strong>Hot Links</strong></h3>
             <p>
+              <a href={this.generateContractUrl()} target="_blank">ERC721 Contract on Polygonscan</a>
+              <br/>
               <a href='https://www.capnganj.art/nft-collections/poison-toads' target="_blank">Project Website & Roadmap</a>
               <br/>
-              <a href='https://testnets.opensea.io/collection/poisontoadsutility' target="_blank">Minting Utilities on Opensea</a>
-              <br/>
               <a href='https://testnets.opensea.io/collection/poisontoads' target="_blank">Opensea Collection</a>
+              <br/>
+              <a href='https://testnets.opensea.io/collection/poisontoadsutility' target="_blank">Minting Utilities on Opensea</a>
+              
             </p>
             <br/><br/>
 
