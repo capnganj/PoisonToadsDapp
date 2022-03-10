@@ -184,21 +184,21 @@ export default class Dapp extends React.Component<Props, State> {
             </p>
             <br/><br/>
 
-            <h3><strong>How To</strong></h3>
+            <h3><strong>How To Mint</strong></h3>
             <p>
               This is the minting dapp for the Poison Toads NFT collection on Polygon by @capnganj.  To mint new 1/1 Poison Toad NFTs using this dapp, follow these steps:
               <br/><br/>
               1) Fund your metamask wallet with Matic on the Polygon mainnet.
               <br/><br/>
-              2) Purchase a minting utility on Opensea for a discounted mint price!  If you have one of the PoisonToadUtility NFTs in your wallet, the mint price above will be cut to either 1/3, 1/6, or 1/9 the standard mint price, depending on the utility token rarity.
+              2) Consider purchasing a minting utility on Opensea to unlock a discounted mint price!  If you have one of the PoisonToadUtility NFTs in your wallet, the mint price will be cut to either 1/3, 1/6, or 1/9 the standard mint price, depending on the utility NFT's rarity.
               <br/><br/>
-              3) Connect your metamask wallet using the 'connect' button, then use the '-' and '+' buttons to select how many NFTs to mint.
+              3) Connect your metamask wallet using the 'connect wallet' button. Make sure you are on the Polygon/Matic Mainnet network in metamask.
               <br/><br/>
-              4) Press the 'Mint' button when you are ready to mint, and approve the transaction in your metamask wallet.  All transactions are final and irreversable.
+              4) Use the '-' and '+' buttons to select how many NFTs to mint. Press the 'Mint' button when you are ready to mint, and approve the transaction in your metamask wallet.  All transactions are final and irreversable.
               <br/><br/>
               5) You can check your minted tokens right away in your Opensea profile or using Polygonscan.  If all of the NFTs look the same on Opensea and have a '?' in the image, please sit tight for the collection reveal!!!
               <br/><br/>
-              6) Repeat steps 3-6 as many times as you'd like to.  If you smoke weed, please don't forget to get super duper high before, during, and after this process for good measure.
+              6) Repeat steps 4-6 as many times as you'd like to.  If you smoke weed, please don't forget to get super duper high before, during, and after this process for good measure.
             </p>
           </div>
       </>
