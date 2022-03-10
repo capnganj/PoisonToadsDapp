@@ -10,9 +10,10 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 Encore
     // directory where compiled assets will be stored
-    .setOutputPath('public/build/')
+    //.setOutputPath('public/build/')
+    .setOutputPath('../docs/PoisonToadsDapp/')
     // public path used by the web server to access the output path
-    .setPublicPath('/build')
+    .setPublicPath('/PoisonToadsDapp')
     // only needed for CDN's or sub-directory deploy
     .setManifestKeyPrefix('PoisonToadsDapp/')
 
