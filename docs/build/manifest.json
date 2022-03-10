@@ -1,12 +1,12 @@
 {
-  "build/main.css": "/build/main.css",
-  "build/main.js": "/build/main.js",
-  "build/images/orangeToad.png": "/build/images/orangeToad.png",
-  "build/images/blueToad.png": "/build/images/blueToad.png",
-  "build/images/dappLogo-01.png": "/build/images/dappLogo-01.png",
-  "build/images/dappLogo.png": "/build/images/dappLogo.png",
-  "build/images/logo.png": "/build/images/logo.png",
-  "build/images/orangeToad_small.png": "/build/images/orangeToad_small.png",
-  "build/images/fav.png": "/build/images/fav.png",
-  "build/images/preview.png": "/build/images/preview.png"
+  "PoisonToadsDapp/build/main.css": "/build/main.css",
+  "PoisonToadsDapp/build/main.js": "/build/main.js",
+  "PoisonToadsDapp/build/images/orangeToad.png": "/build/images/orangeToad.png",
+  "PoisonToadsDapp/build/images/blueToad.png": "/build/images/blueToad.png",
+  "PoisonToadsDapp/build/images/dappLogo-01.png": "/build/images/dappLogo-01.png",
+  "PoisonToadsDapp/build/images/dappLogo.png": "/build/images/dappLogo.png",
+  "PoisonToadsDapp/build/images/logo.png": "/build/images/logo.png",
+  "PoisonToadsDapp/build/images/orangeToad_small.png": "/build/images/orangeToad_small.png",
+  "PoisonToadsDapp/build/images/fav.png": "/build/images/fav.png",
+  "PoisonToadsDapp/build/images/preview.png": "/build/images/preview.png"
 }
