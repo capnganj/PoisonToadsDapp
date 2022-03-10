@@ -31,7 +31,6 @@
     },
     "license": "UNLICENSED",
     "private": true,
-    "homepage": "https://capnganj.github.io/PoisonToadsDapp/",
     "scripts": {
         "dev-server": "encore dev-server",
         "dev": "encore dev",
