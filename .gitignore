@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# I <3 hashlips
+node_modules
+public/build
