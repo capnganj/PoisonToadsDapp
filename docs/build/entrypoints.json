@@ -2,10 +2,10 @@
   "entrypoints": {
     "main": {
       "css": [
-        "/build/main.css"
+        "/PoisonToadsDapp/build/main.css"
       ],
       "js": [
-        "/build/main.js"
+        "/PoisonToadsDapp/build/main.js"
       ]
     }
   }

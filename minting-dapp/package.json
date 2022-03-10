@@ -1,6 +1,6 @@
 {
-    "name": "@hashlips-lab/nft-erc721-collection-dapp",
-    "version": "1.0.0",
+    "name": "@capnganj/poison-toads-minting-dapp",
+    "version": "0.1.0",
     "devDependencies": {
         "@babel/preset-react": "^7.0.0",
         "@metamask/detect-provider": "^1.2.0",
@@ -31,6 +31,7 @@
     },
     "license": "UNLICENSED",
     "private": true,
+    "homepage": "https://capnganj.github.io/PoisonToadsDapp/",
     "scripts": {
         "dev-server": "encore dev-server",
         "dev": "encore dev",
