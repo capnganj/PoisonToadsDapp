@@ -241,9 +241,9 @@ contract PoisonToads is ERC721, Ownable, ContextMixin, NativeMetaTransaction {
   string public uriSuffix = ".json";
   string public hiddenMetadataUri;
   
-  uint256 public cost = 1.00 ether;
-  uint256 public maxSupply = 100;
-  uint256 public maxMintAmountPerTx = 5;
+  uint256 public cost = 3.20 ether;
+  uint256 public maxSupply = 3333;
+  uint256 public maxMintAmountPerTx = 15;
 
   bool public paused = true;
   bool public revealed = false;
@@ -251,10 +251,10 @@ contract PoisonToads is ERC721, Ownable, ContextMixin, NativeMetaTransaction {
   address public ptuAddress;
 
   constructor() ERC721("PoisonToads", "PSNTDS") {
-    setHiddenMetadataUri("ipfs://QmRp9XNPkwDqA5iCggF3E81cvWpwofeEUyupkBecs51P62/hidden.json");
+    setHiddenMetadataUri("ipfs://QmdKdckU9y1x9xphK5ksdXdihw2H4MDN91MyEqdDUkqSUm/hidden.json");
 
     //point to PoisonToadsUtility contract
-    setPtuAddress(0x6AdF29bF31540f2082DdF85B7fE55C92C191e420);
+    setPtuAddress(0x562912AD41f2E4BbB67B34362a3Dcc0488730eD9);
 
     //calls into opensea stuff
     _initializeEIP712("PoisonToads");
@@ -333,21 +333,21 @@ contract PoisonToads is ERC721, Ownable, ContextMixin, NativeMetaTransaction {
 
   //internal method to computed discounted cost
   function _getDiscountCost(address _owner) internal view returns (uint256){
-    //if the sender has a tpu token, cut the mint price in half
-    //we need the 1155 interface so we can call a method on the TPU contract here
+    //if the sender has a PTU token, cut the mint price in half / quarter / eighth
+    //we need the 1155 interface so we can call a method on the PTU contract here
     IERC1155 ptuContract = IERC1155(ptuAddress);
     uint256 costMultiplier = 1;
     uint256 commonAmount = ptuContract.balanceOf(_owner, 1);
     uint256 epicAmount = ptuContract.balanceOf(_owner, 2);
     uint256 legendAmount = ptuContract.balanceOf(_owner, 3);
     if(commonAmount >= 1){
-      costMultiplier = 3;
+      costMultiplier = 2;
     }
     if(epicAmount >= 1){
-        costMultiplier = 6;
+        costMultiplier = 4;
     }
     if(legendAmount >= 1){
-        costMultiplier = 9;
+        costMultiplier = 8;
     }
     return cost / costMultiplier;
   }

@@ -180,9 +180,9 @@ export default class Dapp extends React.Component<Props, State> {
               <br/>
               <a href='https://www.capnganj.art/nft-collections/poison-toads' target="_blank">Project Website & Roadmap</a>
               <br/>
-              <a href='https://testnets.opensea.io/collection/poisontoads' target="_blank">Opensea Collection</a>
+              <a href='https://opensea.io/collection/poison-toads' target="_blank">Opensea Collection</a>
               <br/>
-              <a href='https://testnets.opensea.io/collection/poisontoadsutility' target="_blank">Minting Utilities on Opensea</a>
+              <a href='https://opensea.io/collection/poison-toads-utility' target="_blank">Minting Utilities on Opensea</a>
               
             </p>
             <br/><br/>
@@ -193,7 +193,7 @@ export default class Dapp extends React.Component<Props, State> {
               <br/><br/>
               1) Fund your metamask wallet with Matic on the Polygon mainnet.
               <br/><br/>
-              2) Consider purchasing a minting utility on Opensea to unlock a discounted mint price!  If you have one of the PoisonToadUtility NFTs in your wallet, the mint price will be cut to either 1/3, 1/6, or 1/9 the standard mint price, depending on the utility NFT's rarity.
+              2) Consider purchasing a minting utility on Opensea to unlock a discounted mint price!  If you have one of the PoisonToadUtility NFTs in your wallet, the mint price will be cut to either 1/2, 1/4, or 1/8 the standard mint price, depending on the utility NFT's rarity.
               <br/><br/>
               3) Connect your metamask wallet using the 'connect wallet' button. Make sure you are on the Polygon/Matic Mainnet network in metamask.
               <br/><br/>

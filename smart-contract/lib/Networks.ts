@@ -28,6 +28,6 @@ export const maticMainnet: NetworkConfigInterface = {
   chainId: 137,
   blockExplorer: {
     name: 'Polygonscan',
-    generateContractUrl: (contractAddress: string) => `https://mumbai.polygonscan.com/address/${contractAddress}`,
+    generateContractUrl: (contractAddress: string) => `https://polygonscan.com/address/${contractAddress}`,
   }
 }

@@ -13,7 +13,7 @@ const CollectionConfig: CollectionConfigInterface = {
   tokenName: 'Poison Toads',
   tokenSymbol: 'PSNTDS',
   hiddenMetadataUri: 'ipfs://QmRp9XNPkwDqA5iCggF3E81cvWpwofeEUyupkBecs51P62/hidden.json',
-  maxSupply: 100,
+  maxSupply: 3333,
   whitelistSale: {
     price: 0.1,
     maxMintAmountPerTx: 1,
@@ -26,7 +26,7 @@ const CollectionConfig: CollectionConfigInterface = {
     price: 0.1,
     maxMintAmountPerTx: 10,
   },
-  contractAddress: "0xe6bda205de2f968271166C4b2650DefB38895De1",
+  contractAddress: "0x12a3Ecd55De986Fcb754cB2C9ddBc1de74Df6C6b",
   marketplaceIdentifier: 'my-nft-token',
   marketplaceConfig: openSea,
   whitelistAddresses: whitelistAddresses,
