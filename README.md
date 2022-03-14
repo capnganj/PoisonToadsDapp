@@ -15,3 +15,10 @@ This is based on the hashlips masterclass NFT collection youtube video, and the 
 - copy everything from /minting-dapp/public to /docs (this is where gh-pages point to in the repo settings)
 - manually add the /PoisonToadsDapp prefix to all img and asset links in the /docs file.  index.html and main.js
 - push to main branch on github
+
+
+# to do before launch!
+These are a few things TODO before the toads go live!  Some of this was discovered during testing, some was put off during the mumbai push
+
+- [x] add some text in with the hourglass to say that the contract is paused.
+- [ ] indicate discount price has been unlocked!  the price is updating in the mint widget, and minting prices are being calculated correctly ... but it could be spruced up a bit...
